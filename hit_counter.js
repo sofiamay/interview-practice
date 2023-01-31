@@ -21,8 +21,8 @@ class HitCounter {
 	}
 
 	record(timestamp) {
-		if (! Number.isInteger(timestamp)) {
-			throw `${timestamp} is not a time in milliseconds`;
+		if (! timestamp instanceof Hit) {
+			throw `${timestamp} is not a Hit instance`;
 		}
 		this.hits.push(timestamp);
 
@@ -50,5 +50,47 @@ class HitCounter {
 			}
 		}
 		return count;
+	}
+}
+
+/* EXTRA (NOT ASKED FOR): 
+    Ideally hits should be a class as well
+*/
+
+class Hit {
+	constructor(timestamp) {
+		// Time must be in miliseconds. Min time is a minute (after time 0 in 1970)
+		if (timestamp < 60000) {
+			throw `Hit(timestamp): timestamp ${timestamp} not valid. Too low`;
+		}
+		if (timestamp > Date.now()) {
+			throw `Hit(timestamp): timestamp ${timestamp} not valid. Must be lower than current time.`;
+		}
+		if (! Number(isInteger)) {
+			throw `Hit(timestamp): timestamp ${timestamp} not valid. Timestamp must be an integer representing milliseconds`;
+		}
+		this.date = new Date(timeStamp);
+		this.val = timestamp;
+	}
+
+	// prints date in YYYY-MM-DD format
+	printDate() {
+		const date = (`0 ${this.date.getDate()}`).slice(-2);
+		const month = (`0 ${this.date.getMonth() + 1}`).slice(-2);
+		const year = this.date.getFullYear();
+		const hours = this.date.getHours();
+		const minutes = this.date.getMinutes();
+		const seconds = this.date.getSeconds();
+		return `${year}-${month}-${date}`;
+	}
+
+	// override
+	valueOf() {
+		return this.val;
+	}
+
+	//override
+	toString() {
+		return new String(this.valueOf());
 	}
 }
