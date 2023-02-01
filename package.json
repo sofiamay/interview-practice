@@ -2,7 +2,8 @@
   "name": "interview-practice",
   "version": "1.0.0",
   "description": "tech interview practice for javascript",
-  "main": "debounce.js",
+  "main": "",
+  "type": "module",
   "scripts": {
     "test": "mocha"
   },
