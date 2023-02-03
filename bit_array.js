@@ -41,17 +41,11 @@ constructor(size) {
 		}
 		// -- end error checking --
 
-		if (this.map.has(i)) {
-			if (val == 0) {
-				this.map.delete(i);
-			} else {
-				this.map.set(i, val);
-			}
-		} else {
+		if (this.map.has(i) && val == 0) {
+			this.map.delete(i);
+		} else if ((! this.map.has(i)) && val == 1) {
 			// map doesn't have i as a key
-			if (val == 1) {
-				this.map.set(i, val);
-			}
+			this.map.set(i, val);
 		}
 	}
 }
