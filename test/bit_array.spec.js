@@ -7,8 +7,8 @@ const SIZE = 16;
 const I_OUT_OF_RANGE = 18;
 const I_NOT_INT = 2.45;
 const I_TEST = 2;
-const VAL_TEST = 1;
 const VAL_NOT_INT = 8.56;
+const VAL_TEST = 1;
 
 // each index of values holds an [i, val] pair. Each pair is a valid integer in range
 const VALUES = [
