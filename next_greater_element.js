@@ -25,8 +25,7 @@ export function nextGreaterElement(i, arr) {
 		if ((a==null) && !(b==null)) return b;
 		if ((b==null) && !(a==null)) return a;
 		if (!(a==null) && !(b==null)) {
-			const result = arr[a] < arr[b] ? a : b;
-			return result;
+			return arr[a] < arr[b] ? a : b;
 		}
 
 		beforeIdx--;
