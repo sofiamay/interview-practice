@@ -5,7 +5,7 @@
   "main": "",
   "type": "module",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha src/**/*.spec.js"
   },
   "repository": {
     "type": "git",
