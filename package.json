@@ -5,7 +5,8 @@
   "main": "",
   "type": "module",
   "scripts": {
-    "test": "mocha src/**/*.spec.js"
+    "build": "npx tsc",
+    "test": "mocha src/**/*.spec.js -r ts-node/register 'src/**/*.spec.ts'"
   },
   "repository": {
     "type": "git",
@@ -23,7 +24,13 @@
   },
   "homepage": "https://github.com/sofiamay/interview-practice#readme",
   "devDependencies": {
+    "@types/chai": "^4.3.5",
+    "@types/mocha": "^10.0.1",
     "chai": "^4.3.7",
-    "mocha": "^10.2.0"
+    "mocha": "^10.2.0",
+    "ts-node": "^10.9.1"
+  },
+  "dependencies": {
+    "typescript": "^5.0.4"
   }
 }
